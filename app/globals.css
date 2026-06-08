@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #132C3F;
+  --orange: #E86F24;
+  --beige: #F5F0E8;
+}
+
+@theme inline {
+  --color-navy: #132C3F;
+  --color-orange: #E86F24;
+  --color-beige: #F5F0E8;
+  --font-montserrat: var(--font-montserrat);
+  --font-inter: var(--font-inter);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #132C3F;
+  color: #132C3F;
+  font-family: var(--font-inter), Inter, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-montserrat), Montserrat, sans-serif;
+}
+
+/* Cache la scrollbar tout en gardant le scroll */
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
