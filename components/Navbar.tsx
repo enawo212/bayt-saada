@@ -38,6 +38,11 @@ export default function Navbar() {
     closeTimer.current = setTimeout(() => setActionsOpen(false), 200);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setActionsOpen(v => !v); }
+    if (e.key === "Escape") setActionsOpen(false);
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50" style={{ backgroundColor: NAVY }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -63,7 +68,12 @@ export default function Navbar() {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <button className="flex items-center gap-1 font-inter text-sm font-medium text-white/65 hover:text-white transition-colors">
+              <button
+                className="flex items-center gap-1 font-inter text-sm font-medium text-white/65 hover:text-white transition-colors"
+                aria-haspopup="true"
+                aria-expanded={actionsOpen}
+                onKeyDown={handleKeyDown}
+              >
                 Nos Actions <ChevronDown size={15} className={`transition-transform duration-200 ${actionsOpen ? "rotate-180" : ""}`} />
               </button>
               {actionsOpen && (

@@ -23,7 +23,7 @@ export default function Footer() {
                 Bayt <span style={{ color: ORANGE }}>Saada</span>
               </span>
             </div>
-            <p className="font-inter text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
+            <p className="font-inter text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
               Association caritative basée à Tanger, au service des familles nécessiteuses et des communautés vulnérables.
             </p>
           </div>
@@ -42,9 +42,9 @@ export default function Footer() {
                 ["AGR — Formation", "/actions/agr"],
               ].map(([label, href]) => (
                 <li key={href}>
-                  <Link href={href} className="font-inter text-sm transition-colors" style={{ color: "rgba(255,255,255,0.45)" }}
+                  <Link href={href} className="font-inter text-sm transition-colors" style={{ color: "rgba(255,255,255,0.65)" }}
                     onMouseEnter={e => (e.target as HTMLElement).style.color = ORANGE}
-                    onMouseLeave={e => (e.target as HTMLElement).style.color = "rgba(255,255,255,0.45)"}
+                    onMouseLeave={e => (e.target as HTMLElement).style.color = "rgba(255,255,255,0.65)"}
                   >
                     {label}
                   </Link>
@@ -59,9 +59,9 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {[["Accueil", "/"], ["Faire un Don", "/don"], ["Contact", "/contact"]].map(([label, href]) => (
                 <li key={href}>
-                  <Link href={href} className="font-inter text-sm transition-colors" style={{ color: "rgba(255,255,255,0.45)" }}
+                  <Link href={href} className="font-inter text-sm transition-colors" style={{ color: "rgba(255,255,255,0.65)" }}
                     onMouseEnter={e => (e.target as HTMLElement).style.color = ORANGE}
-                    onMouseLeave={e => (e.target as HTMLElement).style.color = "rgba(255,255,255,0.45)"}
+                    onMouseLeave={e => (e.target as HTMLElement).style.color = "rgba(255,255,255,0.65)"}
                   >
                     {label}
                   </Link>
@@ -74,15 +74,15 @@ export default function Footer() {
           <div>
             <h4 className="font-montserrat font-bold text-white mb-5 text-xs uppercase tracking-widest">Contact</h4>
             <ul className="space-y-3">
-              <li className="flex items-start gap-2 text-sm font-inter" style={{ color: "rgba(255,255,255,0.45)" }}>
+              <li className="flex items-start gap-2 text-sm font-inter" style={{ color: "rgba(255,255,255,0.65)" }}>
                 <MapPin size={15} className="mt-0.5 shrink-0" style={{ color: ORANGE }} />
                 Tanger, Maroc
               </li>
               <li className="flex items-start gap-2 text-sm font-inter">
                 <Mail size={15} className="mt-0.5 shrink-0" style={{ color: ORANGE }} />
-                <a href="mailto:contact@baytsaada.org" className="transition-colors" style={{ color: "rgba(255,255,255,0.45)" }}
+                <a href="mailto:contact@baytsaada.org" className="transition-colors" style={{ color: "rgba(255,255,255,0.65)" }}
                   onMouseEnter={e => (e.target as HTMLElement).style.color = ORANGE}
-                  onMouseLeave={e => (e.target as HTMLElement).style.color = "rgba(255,255,255,0.45)"}
+                  onMouseLeave={e => (e.target as HTMLElement).style.color = "rgba(255,255,255,0.65)"}
                 >
                   contact@baytsaada.org
                 </a>
@@ -104,10 +104,10 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t flex flex-col sm:flex-row justify-between items-center gap-4"
           style={{ borderColor: "rgba(255,255,255,0.07)" }}>
-          <p className="font-inter text-xs" style={{ color: "rgba(255,255,255,0.3)" }}>
+          <p className="font-inter text-xs" style={{ color: "rgba(255,255,255,0.55)" }}>
             © {new Date().getFullYear()} Bayt Saada. Tous droits réservés.
           </p>
-          <p className="font-inter text-xs" style={{ color: "rgba(255,255,255,0.3)" }}>
+          <p className="font-inter text-xs" style={{ color: "rgba(255,255,255,0.55)" }}>
             Association caritative — Tanger, Maroc
           </p>
         </div>

@@ -47,14 +47,14 @@ export default function ActionPageLayout({
             <h1 className="font-montserrat font-bold text-4xl sm:text-5xl mb-4 leading-tight text-white">
               {title}
             </h1>
-            <p className="font-inter text-lg leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
+            <p className="font-inter text-lg leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>
               {subtitle}
             </p>
           </motion.div>
         </div>
 
         {/* Wave vers BEIGE */}
-        <div className="absolute bottom-0 left-0 right-0">
+        <div className="absolute bottom-0 left-0 right-0" aria-hidden="true">
           <svg viewBox="0 0 1440 50" fill="none">
             <path d="M0,30 C360,60 1080,0 1440,30 L1440,50 L0,50 Z" fill={BEIGE} />
           </svg>
@@ -99,7 +99,7 @@ export default function ActionPageLayout({
 
       {/* CTA — fond NAVY */}
       <section className="py-20 text-center relative overflow-hidden" style={{ backgroundColor: NAVY }}>
-        <div className="absolute top-0 left-0 right-0">
+        <div className="absolute top-0 left-0 right-0" aria-hidden="true">
           <svg viewBox="0 0 1440 50" fill="none">
             <path d="M0,20 C360,-10 1080,50 1440,20 L1440,0 L0,0 Z" fill={BEIGE} />
           </svg>
@@ -109,7 +109,7 @@ export default function ActionPageLayout({
             <h3 className="font-montserrat font-bold text-3xl text-white mb-3">
               Prêt à agir ?
             </h3>
-            <p className="font-inter mb-8" style={{ color: "rgba(255,255,255,0.5)" }}>
+            <p className="font-inter mb-8" style={{ color: "rgba(255,255,255,0.70)" }}>
               100% de votre don est reversé aux bénéficiaires.
             </p>
             <Link href="/don"

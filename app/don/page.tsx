@@ -51,7 +51,7 @@ export default function DonPage() {
             </p>
           </motion.div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0">
+        <div className="absolute bottom-0 left-0 right-0" aria-hidden="true">
           <svg viewBox="0 0 1440 50" fill="none">
             <path d="M0,30 C360,60 1080,0 1440,30 L1440,50 L0,50 Z" fill={BEIGE} />
           </svg>
@@ -67,12 +67,13 @@ export default function DonPage() {
             style={{ borderColor: "rgba(19,44,63,0.07)" }}>
 
             {/* Fréquence */}
-            <div className="mb-7">
-              <p className="font-montserrat font-bold text-sm mb-3" style={{ color: NAVY }}>Type de don</p>
+            <fieldset className="mb-7">
+              <legend className="font-montserrat font-bold text-sm mb-3" style={{ color: NAVY }}>Type de don</legend>
               <div className="flex rounded-xl overflow-hidden border" style={{ borderColor: "rgba(19,44,63,0.12)" }}>
                 {(["unique", "mensuel"] as const).map((f) => (
                   <button key={f} onClick={() => setFrequence(f)}
                     className="flex-1 py-3 font-montserrat font-semibold text-sm capitalize transition-all"
+                    aria-pressed={frequence === f}
                     style={{
                       backgroundColor: frequence === f ? NAVY : "transparent",
                       color: frequence === f ? "white" : NAVY,
@@ -81,12 +82,12 @@ export default function DonPage() {
                   </button>
                 ))}
               </div>
-            </div>
+            </fieldset>
 
             {/* Programme */}
             <div className="mb-7">
-              <p className="font-montserrat font-bold text-sm mb-3" style={{ color: NAVY }}>Programme</p>
-              <select value={programme} onChange={e => setProgramme(e.target.value)}
+              <label htmlFor="programme" className="block font-montserrat font-bold text-sm mb-3" style={{ color: NAVY }}>Programme</label>
+              <select id="programme" value={programme} onChange={e => setProgramme(e.target.value)}
                 className="w-full border rounded-xl px-4 py-3 font-inter text-sm focus:outline-none appearance-none"
                 style={{ borderColor: "rgba(19,44,63,0.15)", color: NAVY }}>
                 {programmes.map(p => <option key={p.value} value={p.value}>{p.label}</option>)}
@@ -109,7 +110,8 @@ export default function DonPage() {
                   </button>
                 ))}
               </div>
-              <input type="number" min="1" placeholder="Autre montant..."
+              <label htmlFor="montant-custom" className="sr-only">Autre montant en euros</label>
+              <input id="montant-custom" type="number" min="1" placeholder="Autre montant..."
                 value={montantCustom}
                 onChange={e => { setMontantCustom(e.target.value); setMontant(""); }}
                 className="w-full border rounded-xl px-4 py-3 font-inter text-sm focus:outline-none"
