@@ -50,7 +50,7 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 relative bg-white rounded-lg p-1">
+            <div className="w-10 h-10 relative bg-white rounded-lg p-1" style={{ outline: `2px solid ${ORANGE}`, outlineOffset: "2px" }}>
               <Image src="/logo.png" alt="Bayt Saada" fill className="object-contain" />
             </div>
             <span className="font-montserrat font-bold text-xl text-white hidden sm:block">
